@@ -1,40 +1,35 @@
-"""
-Chapitre 11.1
-
-Classes pour représenter un personnage.
-"""
-
-
 import random
-
 import utils
 
-
 class Weapon:
-	"""
-	Une arme dans le jeu.
+	def __init__(self, nom: str, power: int, niveau: int):
+		self.nom = nom
+		self.power = power
+		self.niv_min = niveau
+		print(f"L'arme choisie est {nom}, avec un dégat de {power} et il faut être au niveau {niveau} pour l'utiliser")
 
-	:param name: Le nom de l'arme
-	:param power: Le niveau d'attaque
-	:param min_level: Le niveau minimal pour l'utiliser
-	"""
-
-	UNARMED_POWER = 20
-
+	def make_unarmed(self):
+		self.nom = "Unarmed"
+		self.power = 20
+		print("le personnage unarmed a été créé")
 
 class Character:
-	"""
-	Un personnage dans le jeu
+	def __init__(self, level, weapon: "weapon"):
+		self.level = level
+		self.weapon = weapon
+	def compute_damage(self, defendant: "Character") -> float:
+		return 
+
 
 	:param name: Le nom du personnage
 	:param max_hp: HP maximum
 	:param attack: Le niveau d'attaque du personnage
 	:param defense: Le niveau de défense du personnage
 	:param level: Le niveau d'expérience du personnage
-	"""
 
 
 
+'''
 def deal_damage(attacker, defender):
 	# TODO: Calculer dégâts
 	print(f"{attacker.name} used {attacker.weapon.name}")
@@ -52,3 +47,7 @@ def run_battle(c1, c2):
 			break
 		# Échanger attaquant/défendeur
 	# TODO: Retourner nombre de tours effectués
+'''
+
+
+Weapon("shotgun", 50, 2)
